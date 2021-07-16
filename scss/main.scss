@@ -394,8 +394,27 @@ a {
   flex-wrap: wrap;
 
   &__img {
-    max-width: 50%;
-    object-fit: cover;
+    flex: 50%;
+    height: 40vw;
+    max-height: 300px;
+    background-position: center;
+    background-size: cover;
+
+    &--milk {
+      background-image: url("../images/mobile/image-gallery-milkbottles.jpg");
+    }
+
+    &--orange {
+      background-image: url("../images/mobile/image-gallery-orange.jpg");
+    }
+
+    &--cone {
+      background-image: url("../images/mobile/image-gallery-cone.jpg");
+    }
+
+    &--sugar {
+      background-image: url("../images/mobile/image-gallery-sugar-cubes.jpg");
+    }
   }
 }
 
@@ -554,9 +573,28 @@ a {
 
   .examples {
     flex-wrap: nowrap;
+    justify-content: space-evenly;
 
     &__img {
-      max-width: 25%;
+      height: 25vw;
+      max-height: 450px;
+      flex: 25%;
+
+      &--milk {
+        background-image: url("../images/desktop/image-gallery-milkbottles.jpg");
+      }
+
+      &--orange {
+        background-image: url("../images/desktop/image-gallery-orange.jpg");
+      }
+
+      &--cone {
+        background-image: url("../images/desktop/image-gallery-cone.jpg");
+      }
+
+      &--sugar {
+        background-image: url("../images/desktop/image-gallery-sugarcubes.jpg");
+      }
     }
   }
 
