@@ -9,15 +9,15 @@
   <title>Sunnyside Agency</title>
 </head>
 <body>
-  <nav class="nav">
+  <nav class="nav hide">
 
     <img src="images/logo.svg" alt="logo" class="nav__logo">
     
-    <button class="nav__menu">
+    <button class="nav__menu" onclick="handleClick()">
       <div class="nav__menu-btn"></div>
     </button>
     
-    <ul class="nav__list hide">
+    <ul class="nav__list">
       <li class="nav__list-item">
         <a href="#">About</a>
       </li>
@@ -101,6 +101,7 @@
       </div>
     </div>
   </section>
+
   <section class="examples">
     <img src="images/mobile/image-gallery-milkbottles.jpg" alt="example" class="examples__img">
     <img src="images/mobile/image-gallery-orange.jpg" alt="example" class="examples__img">
@@ -122,5 +123,16 @@
       <li class="footer__item"><a href="#"><img src="images/icon-pinterest.svg" alt="facebook"></a></li>
     </ul>
   </footer>
+
+  <script type="text/javascript">
+    const nav = document.querySelector('.nav');
+    const handleClick = () => {
+      if(nav.classList.contains('hide')){
+        nav.classList.remove('hide');
+      } else {
+        nav.classList.add('hide');
+      }
+    }
+  </script>
 </body>
 </html>

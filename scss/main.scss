@@ -24,6 +24,16 @@ a {
   color: $white;
 }
 
+.nav__list-item,
+.section__text,
+.clients__review,
+.clients__position,
+.footer__item {
+  font-family: "Barlow";
+  text-align: center;
+}
+
+.nav__list-btn,
 .header__phrase,
 .section__title,
 .section__learn-more,
@@ -31,6 +41,25 @@ a {
 .clients__name {
   font-family: "Fraunces";
   text-align: center;
+}
+
+.nav__list-item,
+.section__text,
+.clients__review {
+  font-size: 1.1rem;
+}
+
+.nav__list-item a {
+  color: $dark-grayish-blue;
+}
+
+.nav__list-btn {
+  text-transform: uppercase;
+  font-size: 1rem;
+
+  a {
+    color: $very-dark-desaturated-blue;
+  }
 }
 
 .header__phrase {
@@ -51,21 +80,6 @@ a {
   font-weight: 900;
   text-transform: uppercase;
   color: $very-dark-desaturated-blue;
-}
-
-.nav__list-item,
-.section__text,
-.clients__review,
-.clients__position,
-.footer__item {
-  font-family: "Barlow";
-  text-align: center;
-}
-
-.nav__list-item,
-.section__text,
-.clients__review {
-  font-size: 1.1rem;
 }
 
 .section__text {
@@ -138,7 +152,9 @@ a {
       width: 25px;
       height: 2px;
       position: relative;
-      background: $white;
+      background: transparent;
+      transform: rotate(360deg);
+      transition: 0.5s;
 
       &::before {
         content: "";
@@ -146,8 +162,9 @@ a {
         height: 2px;
         background-color: $white;
         position: absolute;
-        top: -8px;
+        top: 0px;
         left: 0px;
+        transform: rotate(45deg);
       }
 
       &::after {
@@ -156,8 +173,9 @@ a {
         height: 2px;
         background-color: $white;
         position: absolute;
-        top: 8px;
+        top: 0px;
         left: 0px;
+        transform: rotate(-45deg);
       }
     }
   }
@@ -176,6 +194,7 @@ a {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    transition: 0.5s;
 
     &::before {
       content: "";
@@ -188,12 +207,48 @@ a {
       border-right: 50px solid $white;
     }
 
-    &.hide {
-      display: none;
-    }
-
     &-item {
       color: black;
+    }
+
+    &-btn {
+      background: $yellow;
+      border-radius: 50px;
+      padding: 1em 2em;
+    }
+  }
+
+  &.hide {
+    .nav__list {
+      opacity: 0;
+      top: 10vh;
+    }
+
+    .nav__menu-btn {
+      background: $white;
+      transform: rotate(0deg);
+
+      &::before {
+        content: "";
+        width: 25px;
+        height: 2px;
+        background-color: $white;
+        position: absolute;
+        top: -8px;
+        left: 0px;
+        transform: rotate(0);
+      }
+
+      &::after {
+        content: "";
+        width: 25px;
+        height: 2px;
+        background-color: $white;
+        position: absolute;
+        top: 8px;
+        left: 0px;
+        transform: rotate(0);
+      }
     }
   }
 }
