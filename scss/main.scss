@@ -12,17 +12,58 @@ body {
 
 // Typography
 
-.header__phrase {
+.header {
+  color: $white;
+}
+
+.header__phrase,
+.section__title,
+.section__learn-more {
   font-family: "Fraunces";
-  font-size: 2.5rem;
-  text-transform: uppercase;
   text-align: center;
+}
+
+.header__phrase {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
   letter-spacing: 8px;
 }
 
-.nav__list-item {
+.section__title {
+  font-size: 2rem;
+  color: $very-dark-desaturated-blue;
+  font-weight: 900;
+}
+
+.section__learn-more {
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: $very-dark-desaturated-blue;
+  text-decoration: none;
+}
+
+.nav__list-item,
+.section__text {
   font-family: "Barlow";
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.section__text {
+  line-height: 1.7;
+  color: $dark-grayish-blue;
+}
+
+.section__img--graphic-design .section__title,
+.section__img--graphic-design .section__text {
+  color: $dark-desaturated-cyan;
+}
+
+.section__img--photography .section__title,
+.section__img--photography .section__text {
+  color: $dark-blue;
 }
 
 // Layout
@@ -50,13 +91,13 @@ body {
       width: 25px;
       height: 2px;
       position: relative;
-      background: #fff;
+      background: $white;
 
       &::before {
         content: "";
         width: 25px;
         height: 2px;
-        background-color: #fff;
+        background-color: $white;
         position: absolute;
         top: -8px;
         left: 0px;
@@ -66,7 +107,7 @@ body {
         content: "";
         width: 25px;
         height: 2px;
-        background-color: #fff;
+        background-color: $white;
         position: absolute;
         top: 8px;
         left: 0px;
@@ -83,7 +124,7 @@ body {
     padding: 0;
     transform: translateX(-50%);
     list-style-type: none;
-    background: #fff;
+    background: $white;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -97,7 +138,7 @@ body {
       border-top: 50px solid transparent;
       border-bottom: 50px solid transparent;
 
-      border-right: 50px solid #fff;
+      border-right: 50px solid $white;
     }
 
     &.hide {
@@ -115,7 +156,6 @@ body {
   background-size: cover;
   background-position: center;
   height: 100vh;
-  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -128,5 +168,77 @@ body {
     display: block;
     width: 35px;
     margin: 0 auto;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+  }
+
+  &__img {
+    background-size: cover;
+    background-position: center;
+
+    &.section__block {
+      padding-top: 35vh;
+    }
+
+    &--transform {
+      background-image: url("../images/mobile/image-transform.jpg");
+
+      & + .section__block .section__learn-more::after {
+        background-color: $yellow;
+      }
+    }
+
+    &--stand-out {
+      background-image: url("../images/mobile/image-stand-out.jpg");
+
+      & + .section__block .section__learn-more::after {
+        background-color: $soft-red;
+      }
+    }
+
+    &--graphic-design {
+      background-image: url("../images/mobile/image-graphic-design.jpg");
+    }
+
+    &--photography {
+      background-image: url("../images/mobile/image-photography.jpg");
+    }
+  }
+
+  &__title {
+    margin: 0.75em 0;
+  }
+
+  &__text {
+    margin-bottom: 2em;
+  }
+
+  &__learn-more {
+    margin-bottom: 2em;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 10px;
+      width: 115%;
+      border-radius: 20px;
+      opacity: 0.25;
+      z-index: -1;
+      top: 0.8em;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+    }
   }
 }

@@ -9,17 +9,58 @@ body {
   font-size: 10px;
 }
 
-.header__phrase {
+.header {
+  color: white;
+}
+
+.header__phrase,
+.section__title,
+.section__learn-more {
   font-family: "Fraunces";
-  font-size: 2.5rem;
-  text-transform: uppercase;
   text-align: center;
+}
+
+.header__phrase {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
   letter-spacing: 8px;
 }
 
-.nav__list-item {
+.section__title {
+  font-size: 2rem;
+  color: #23303e;
+  font-weight: 900;
+}
+
+.section__learn-more {
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #23303e;
+  text-decoration: none;
+}
+
+.nav__list-item,
+.section__text {
   font-family: "Barlow";
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.section__text {
+  line-height: 1.7;
+  color: #818498;
+}
+
+.section__img--graphic-design .section__title,
+.section__img--graphic-design .section__text {
+  color: #25564b;
+}
+
+.section__img--photography .section__title,
+.section__img--photography .section__text {
+  color: #19536b;
 }
 
 .nav {
@@ -51,14 +92,14 @@ body {
   width: 25px;
   height: 2px;
   position: relative;
-  background: #fff;
+  background: white;
 }
 
 .nav__menu-btn::before {
   content: "";
   width: 25px;
   height: 2px;
-  background-color: #fff;
+  background-color: white;
   position: absolute;
   top: -8px;
   left: 0px;
@@ -68,7 +109,7 @@ body {
   content: "";
   width: 25px;
   height: 2px;
-  background-color: #fff;
+  background-color: white;
   position: absolute;
   top: 8px;
   left: 0px;
@@ -84,7 +125,7 @@ body {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   list-style-type: none;
-  background: #fff;
+  background: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,7 +148,7 @@ body {
   right: 0;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
-  border-right: 50px solid #fff;
+  border-right: 50px solid white;
 }
 
 .nav__list.hide {
@@ -123,7 +164,6 @@ body {
   background-size: cover;
   background-position: center;
   height: 100vh;
-  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -144,5 +184,90 @@ body {
   display: block;
   width: 35px;
   margin: 0 auto;
+}
+
+.section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2em;
+}
+
+.section__img {
+  background-size: cover;
+  background-position: center;
+}
+
+.section__img.section__block {
+  padding-top: 35vh;
+}
+
+.section__img--transform {
+  background-image: url("../images/mobile/image-transform.jpg");
+}
+
+.section__img--transform + .section__block .section__learn-more::after {
+  background-color: #fad400;
+}
+
+.section__img--stand-out {
+  background-image: url("../images/mobile/image-stand-out.jpg");
+}
+
+.section__img--stand-out + .section__block .section__learn-more::after {
+  background-color: #fe7867;
+}
+
+.section__img--graphic-design {
+  background-image: url("../images/mobile/image-graphic-design.jpg");
+}
+
+.section__img--photography {
+  background-image: url("../images/mobile/image-photography.jpg");
+}
+
+.section__title {
+  margin: 0.75em 0;
+}
+
+.section__text {
+  margin-bottom: 2em;
+}
+
+.section__learn-more {
+  margin-bottom: 2em;
+  position: relative;
+}
+
+.section__learn-more::after {
+  content: "";
+  display: block;
+  height: 10px;
+  width: 115%;
+  border-radius: 20px;
+  opacity: 0.25;
+  z-index: -1;
+  top: 0.8em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
 }
 /*# sourceMappingURL=main.css.map */
