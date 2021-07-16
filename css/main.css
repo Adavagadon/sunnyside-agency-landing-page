@@ -9,13 +9,19 @@ body {
   font-size: 10px;
 }
 
+img {
+  display: block;
+}
+
 .header {
   color: white;
 }
 
 .header__phrase,
 .section__title,
-.section__learn-more {
+.section__learn-more,
+.clients__title,
+.clients__name {
   font-family: "Fraunces";
   text-align: center;
 }
@@ -42,10 +48,17 @@ body {
 }
 
 .nav__list-item,
-.section__text {
+.section__text,
+.clients__review,
+.clients__position {
   font-family: "Barlow";
-  font-size: 1.1rem;
   text-align: center;
+}
+
+.nav__list-item,
+.section__text,
+.clients__review {
+  font-size: 1.1rem;
 }
 
 .section__text {
@@ -61,6 +74,28 @@ body {
 .section__img--photography .section__title,
 .section__img--photography .section__text {
   color: #19536b;
+}
+
+.clients__title {
+  color: #818498;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 900;
+}
+
+.clients__review {
+  line-height: 1.7;
+  color: #5a636c;
+}
+
+.clients__name {
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.clients__position {
+  font-size: 0.85rem;
+  color: #818498;
 }
 
 .nav {
@@ -181,7 +216,6 @@ body {
 }
 
 .header__arrow {
-  display: block;
   width: 35px;
   margin: 0 auto;
 }
@@ -269,5 +303,67 @@ body {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   position: absolute;
+}
+
+.clients {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.clients__title {
+  margin: 3em 0 2em 0;
+}
+
+.clients__container {
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+
+.clients__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 3em;
+}
+
+.clients__img, .clients__review {
+  margin-bottom: 1em;
+}
+
+.clients__img {
+  width: 70px;
+  border-radius: 100px;
+}
+
+.clients__name {
+  margin-bottom: 0.75em;
 }
 /*# sourceMappingURL=main.css.map */

@@ -10,6 +10,10 @@ body {
   font-size: 10px;
 }
 
+img {
+  display: block;
+}
+
 // Typography
 
 .header {
@@ -18,7 +22,9 @@ body {
 
 .header__phrase,
 .section__title,
-.section__learn-more {
+.section__learn-more,
+.clients__title,
+.clients__name {
   font-family: "Fraunces";
   text-align: center;
 }
@@ -45,10 +51,17 @@ body {
 }
 
 .nav__list-item,
-.section__text {
+.section__text,
+.clients__review,
+.clients__position {
   font-family: "Barlow";
-  font-size: 1.1rem;
   text-align: center;
+}
+
+.nav__list-item,
+.section__text,
+.clients__review {
+  font-size: 1.1rem;
 }
 
 .section__text {
@@ -64,6 +77,28 @@ body {
 .section__img--photography .section__title,
 .section__img--photography .section__text {
   color: $dark-blue;
+}
+
+.clients__title {
+  color: $dark-grayish-blue;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 900;
+}
+
+.clients__review {
+  line-height: 1.7;
+  color: $very-dark-grayish-blue;
+}
+
+.clients__name {
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.clients__position {
+  font-size: 0.85rem;
+  color: $dark-grayish-blue;
 }
 
 // Layout
@@ -165,7 +200,6 @@ body {
   }
 
   &__arrow {
-    display: block;
     width: 35px;
     margin: 0 auto;
   }
@@ -240,5 +274,45 @@ body {
       transform: translateX(-50%);
       position: absolute;
     }
+  }
+}
+
+.clients {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    margin: 3em 0 2em 0;
+  }
+
+  &__container {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+  }
+
+  &__img,
+  &__review {
+    margin-bottom: 1em;
+  }
+
+  &__img {
+    width: 70px;
+    border-radius: 100px;
+  }
+
+  &__name {
+    margin-bottom: 0.75em;
   }
 }
